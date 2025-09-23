@@ -1,0 +1,983 @@
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Header */
+.header {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  color: #1f2937;
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.security-badge span {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Main Content */
+.main-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Payment Card */
+.payment-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.payment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.payment-header h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.5rem 0;
+}
+
+.payment-header p {
+  color: #6b7280;
+  margin: 0;
+}
+
+.price-section {
+  text-align: right;
+}
+
+.price {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #059669;
+  margin-bottom: 0.25rem;
+}
+
+.price-subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.checkmark {
+  width: 1.25rem;
+  height: 1.25rem;
+  background: #059669;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.mastercard-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-card {
+  width: 8rem;
+  height: 5rem;
+  background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.125rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Payment Button */
+.payment-button {
+  width: 100%;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  color: white;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  border: none;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.payment-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Features Section */
+.features-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-column {
+  text-align: center;
+  color: white;
+}
+
+.feature-icon {
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  margin: 0 auto 1rem auto;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-column h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.feature-column p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  max-width: 28rem;
+  width: 100%;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.close-button:hover {
+  color: #6b7280;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.checkout-container {
+  min-height: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-state {
+  text-align: center;
+}
+
+.spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid #e5e7eb;
+  border-top: 2px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-state p {
+  color: #6b7280;
+  margin: 0;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-top: 1px solid #f3f4f6;
+  background: #f9fafb;
+}
+
+.cancel-button {
+  padding: 0.5rem 1.5rem;
+  background: #e5e7eb;
+  color: #374151;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cancel-button:hover {
+  background: #d1d5db;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content {
+    padding: 1rem;
+  }
+  
+  .main-content {
+    padding: 2rem 1rem;
+  }
+  
+  .hero-section h2 {
+    font-size: 2rem;
+  }
+  
+  .hero-section p {
+    font-size: 1.125rem;
+  }
+  
+  .payment-card {
+    padding: 1.5rem;
+  }
+  
+  .payment-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .features-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.error-message {
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.error-message p {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Processing Message */
+.processing-message {
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin: 1rem auto;
+  max-width: 600px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Payment Result Messages */
+.result-message {
+  border-radius: 0.75rem;
+  margin: 1rem auto;
+  max-width: 600px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.result-message.success {
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+}
+
+.result-message.error {
+  background-color: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.result-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.result-body {
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
+}
+
+.result-body p {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+.result-body strong {
+  font-weight: 600;
+}
+
+/* Button Loading State */
+.payment-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.payment-button:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.button-spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 0.5rem;
+}
+
+/* Session Info */
+.session-info {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+  word-break: break-all;
+}
+
+/* Spin animation for button spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add this to your existing App.css file */
+
+/* Error Message */
+.error-message {
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.error-message p {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Processing Message */
+.processing-message {
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin: 1rem auto;
+  max-width: 600px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Receipt Overlay */
+.receipt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.receipt-container {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  max-width: 480px;
+  width: 100%;
+  overflow: hidden;
+  animation: slideUp 0.3s ease;
+}
+
+.receipt-header {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.receipt-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.receipt-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.receipt-close-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.receipt-body {
+  padding: 2rem;
+  background: #fafafa;
+}
+
+.receipt-details {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.receipt-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 1.1rem;
+}
+
+.receipt-item:last-child {
+  border-bottom: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #059669;
+}
+
+.receipt-item.error {
+  color: #dc2626;
+}
+
+.receipt-item strong {
+  color: #374151;
+  font-weight: 600;
+  margin-right: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button Loading State */
+.payment-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.payment-button:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.button-spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 0.5rem;
+}
+
+/* Session Info */
+.session-info {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+  word-break: break-all;
+}
+
+/* Spin animation for button spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error receipt styling */
+.receipt-header.error {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .receipt-container {
+    margin: 1rem;
+    max-width: none;
+  }
+  
+  .receipt-header {
+    padding: 1.5rem;
+  }
+  
+  .receipt-header h2 {
+    font-size: 1.25rem;
+  }
+  
+  .receipt-body {
+    padding: 1.5rem;
+  }
+  
+  .receipt-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}
+
+/* Add this to your existing App.css file */
+
+/* Error Message */
+.error-message {
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.error-message p {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Processing Message */
+.processing-message {
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin: 1rem auto;
+  max-width: 600px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Receipt Overlay */
+.receipt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.receipt-container {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  max-width: 480px;
+  width: 100%;
+  overflow: hidden;
+  animation: slideUp 0.3s ease;
+}
+
+.receipt-header {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.receipt-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.receipt-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.receipt-close-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.receipt-body {
+  padding: 2rem;
+  background: #fafafa;
+}
+
+.receipt-details {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.receipt-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 1.1rem;
+}
+
+.receipt-item:last-child {
+  border-bottom: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #059669;
+}
+
+.receipt-item.error {
+  color: #dc2626;
+}
+
+.receipt-item strong {
+  color: #374151;
+  font-weight: 600;
+  margin-right: 1rem;
+}
+
+/* Technical Details Sections */
+.receipt-technical-section,
+.receipt-session-section {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px dashed #e5e7eb;
+}
+
+.technical-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6b7280;
+  margin: 0 0 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.technical-details {
+  background: #f8fafc;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+}
+
+.technical-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+  flex-wrap: wrap;
+}
+
+.technical-item:last-child {
+  border-bottom: none;
+}
+
+.technical-item strong {
+  color: #4b5563;
+  font-weight: 500;
+  min-width: 140px;
+}
+
+.session-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-width: 280px;
+}
+
+.session-id {
+  background: #3b82f6;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  word-break: break-all;
+  line-height: 1.2;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button Loading State */
+.payment-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.payment-button:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.button-spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 0.5rem;
+}
+
+/* Session Info */
+.session-info {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+  word-break: break-all;
+}
+
+/* Spin animation for button spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error receipt styling */
+.receipt-header.error {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .receipt-container {
+    margin: 1rem;
+    max-width: none;
+  }
+  
+  .receipt-header {
+    padding: 1.5rem;
+  }
+  
+  .receipt-header h2 {
+    font-size: 1.25rem;
+  }
+  
+  .receipt-body {
+    padding: 1.5rem;
+  }
+  
+  .receipt-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}
