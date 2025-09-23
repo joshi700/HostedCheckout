@@ -109,7 +109,7 @@ function App() {
     setError(null);
     
     try {
-      const response = await fetch('http://localhost:3005/', {
+      const response = await fetch('https://hosted-checkout-backend-jo7a.vercel.app', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
