@@ -183,7 +183,7 @@ function App() {
         <div className="payment-card">
           <div className="payment-header">
             <div className="price-section">
-              <div className="price">Demo Payment of Hosted Checkout Product - $99.99</div>
+              <div className="price">Demo Payment of Hosted Checkout Product - $1.00</div>
             </div>
           </div>
 
