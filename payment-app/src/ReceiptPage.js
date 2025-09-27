@@ -5,7 +5,7 @@ function ReceiptPage() {
     resultIndicator: '',
     sessionVersion: '',
     checkoutVersion: '',
-    orderAmount: '$99.99', // Default amount from your main app
+    orderAmount: '$99.00', // Default amount from your main app
     orderId: '',
     transactionStatus: '',
     transactionId: ''
