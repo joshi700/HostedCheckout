@@ -192,7 +192,7 @@ function HomePage() {
         <div className="payment-card">
           <div className="payment-header">
             <div className="price-section">
-              <div className="price">Demo Payment - Hosted Checkout - Payment Page Option - $99.99</div>
+              <div className="price">Hosted Checkout Demo - Payment Page - $99</div>
             </div>
           </div>
 
