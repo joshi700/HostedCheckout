@@ -92,7 +92,7 @@ function HomePage() {
         },
         body: JSON.stringify({
           returnUrl: returnUrl,
-          amount: '99.99',
+          amount: '99.00',
           orderId: `ORDER_${Date.now()}` // Generate unique order ID
         })
       });
