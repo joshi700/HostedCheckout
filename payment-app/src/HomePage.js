@@ -85,7 +85,7 @@ function HomePage() {
       const baseUrl = window.location.origin;
       const returnUrl = `${baseUrl}/receipt`;
       
-      const response = await fetch('https://hosted-checkout-backend-jo7a.vercel.app/', {
+      const response = await fetch('https://hosted-checkout-backend-payment-pag.vercel.app/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
