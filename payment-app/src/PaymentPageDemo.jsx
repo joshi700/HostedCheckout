@@ -11,7 +11,8 @@ import { load, save, tracked, upsertCall } from './techgear/store.js';
 // checkout.min.js redirects the shopper to the gateway-hosted Payment Page, and the
 // gateway sends them back to /ReceiptPage with a resultIndicator. The payment
 // succeeded only if that resultIndicator equals the successIndicator returned when
-// the session was created.
+// the session was created. The Payment Page's Back link uses the cancelUrl
+// ("/?cancelled=1"), which reopens checkout with the order still in place.
 
 const API_URL = (process.env.REACT_APP_API_BASE || 'https://hosted-checkout-backend-payment-pag.vercel.app').replace(/\/+$/, '') + '/';
 const CHECKOUT_JS = 'https://mtf.gateway.mastercard.com/static/checkout/checkout.min.js';
@@ -54,14 +55,20 @@ export default function PaymentPageDemo() {
   const location = useLocation();
   const navigate = useNavigate();
   const onReceipt = location.pathname.toLowerCase() === '/receiptpage';
+  const cancelled = new URLSearchParams(location.search).has('cancelled');
 
-  const [view, setView] = useState({ page: 'home' });
+  const [view, setView] = useState(() =>
+    cancelled && load(ORDER_KEY, null) ? { page: 'checkout' } : { page: 'home' });
   const [cart, setCart] = useState(() => load(CART_KEY, []));
   const [order, setOrder] = useState(() => load(ORDER_KEY, null));
   const [calls, setCalls] = useState(() => load(CALLS_KEY, []));
   const [busy, setBusy] = useState(null);
   const [error, setError] = useState(null);
   const [devOpen, setDevOpen] = useState(false);
+  const [notice, setNotice] = useState(cancelled ? 'Payment cancelled. Your order is still here, so you can try again.' : null);
+
+  // Drop ?cancelled=1 from the address bar once it has been read.
+  useEffect(() => { if (cancelled) navigate('/', { replace: true }); }, [cancelled, navigate]);
 
   useEffect(() => save(CART_KEY, cart), [cart]);
   useEffect(() => save(CALLS_KEY, calls), [calls]);
@@ -71,6 +78,7 @@ export default function PaymentPageDemo() {
   function go(next) {
     if (onReceipt) navigate('/');
     setError(null);
+    setNotice(null);
     setBusy(null);
     setView(next);
     window.scrollTo({ top: 0 });
@@ -81,17 +89,20 @@ export default function PaymentPageDemo() {
     setOrder({ lines, amount: cartTotal(cart).toFixed(2) });
     setCalls([]);
     setError(null);
+    setNotice(null);
     setView({ page: 'checkout' });
     window.scrollTo({ top: 0 });
   }
 
   async function payOnPaymentPage() {
     setError(null);
+    setNotice(null);
     try {
       setBusy('Creating checkout session…');
       const request = {
         items: order.lines.map(({ id, qty }) => ({ id, qty })),
         returnUrl: `${window.location.origin}/ReceiptPage`,
+        cancelUrl: `${window.location.origin}/?cancelled=1`,
         responseFormat: 'json',
       };
       const res = await tracked(record, { method: 'POST', url: API_URL, label: 'Create checkout session (INITIATE_CHECKOUT)', request }, async () => {
@@ -163,6 +174,7 @@ export default function PaymentPageDemo() {
             <div className="tg-c2p-body">
               {busy ? <Busy label={busy} /> : (
                 <>
+                  {notice && <div className="tg-notice">{notice}</div>}
                   <p className="tg-help">
                     You'll be taken to the Mastercard Payment Page to pay {money(Number(order.amount), CURRENCY)}, then brought back here for your confirmation.
                   </p>

@@ -631,6 +631,10 @@ body { margin: 0; }
 .tg-drawer .txn-tab.active, .tg-drawer .gw-call-tab.active { color: var(--tg-green); border-bottom-color: var(--tg-green); }
 .tg-drawer .txn-payload-toggle:hover { color: var(--tg-green); }
 
+.tg-notice {
+  padding: 12px 14px; border-left: 3px solid var(--tg-green);
+  background: #e6efe9; color: var(--tg-green); font-size: 13px;
+}
 .tg-testcard {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px;
   padding: 12px 14px; background: var(--tg-bg); border: 1px dashed var(--tg-line);
