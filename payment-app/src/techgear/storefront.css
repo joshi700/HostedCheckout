@@ -635,6 +635,18 @@ body { margin: 0; }
   padding: 12px 14px; border-left: 3px solid var(--tg-green);
   background: #e6efe9; color: var(--tg-green); font-size: 13px;
 }
+/* Container the gateway renders its embedded payment form into. */
+.tg-embed { min-height: 520px; padding: 0 18px 18px; }
+.tg-embed iframe { width: 100% !important; border: 0; }
+
+/* Inline 3-D Secure: the gateway's challenge page renders in this frame. */
+.tg-3ds { margin: 0 18px 18px; border: 1px solid var(--tg-line); background: #fff; }
+.tg-3ds iframe { display: block; width: 100% !important; height: 460px !important; border: 0; }
+.tg-3ds > div { height: auto !important; }  /* the gateway's wrapper asks for 100vh */
+.tg-hs-fields { display: grid; gap: 4px; }
+.tg-hs-fields .tg-field-label { margin-top: 10px; }
+.tg-hs-fields input[readonly] { cursor: text; }
+
 .tg-testcard {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px;
   padding: 12px 14px; background: var(--tg-bg); border: 1px dashed var(--tg-line);
